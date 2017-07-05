@@ -64,12 +64,12 @@
         android:layout_height="wrap_content"
         android:layout_marginLeft="40dp"
         android:layout_marginRight="40dp"
-        android:layout_marginTop="28dp"
+        android:layout_marginTop="42dp"
         android:textColor="#fff"
+        android:textAllCaps="false"
         android:background="@color/colorAccent"
         android:text="Connect"
-        android:layout_below="@+id/et_password"
-        android:layout_centerHorizontal="true" />
+        android:layout_below="@+id/et_password" />
 
     <Button
         android:id="@+id/button1"
@@ -79,8 +79,9 @@
         android:layout_marginRight="40dp"
         android:textColor="#fff"
         android:background="@color/colorPrimary"
-        android:layout_marginTop="5dp"
+        android:layout_marginTop="10dp"
         android:text="Sign in"
+        android:textAllCaps="false"
         android:layout_below="@+id/button"
         android:layout_centerHorizontal="true" />
 
