@@ -9,15 +9,22 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".LoginActivity">
+
+        <activity android:name=".LoginActivity" />
+        <activity
+            android:name=".MainMenuActivity"
+            android:label="Menu principale"/>
+        <activity android:name=".NewRdvActivity"
+            android:label="Nouveau rendez-vous" />
+        <activity
+            android:name=".WelcomeActivity"
+            android:theme="@style/welcomeTheme">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".MainMenuActivity" />
-        <activity android:name=".NewRdvActivity"></activity>
+
     </application>
 
 </manifest>

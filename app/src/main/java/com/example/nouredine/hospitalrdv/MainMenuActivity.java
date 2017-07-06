@@ -27,7 +27,6 @@ public class MainMenuActivity extends AppCompatActivity {
             public void onClick(View v) {
                 Intent rdvIntent = new Intent(MainMenuActivity.this, NewRdvActivity.class);
                 startActivity(rdvIntent);
-                finish();
             }
         });
     }

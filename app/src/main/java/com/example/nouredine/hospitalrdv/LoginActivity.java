@@ -22,7 +22,6 @@ public class LoginActivity extends AppCompatActivity {
             public void onClick(View v) {
                 Intent rdvIntent = new Intent(LoginActivity.this, MainMenuActivity.class);
                 startActivity(rdvIntent);
-                finish();
             }
         });
 
