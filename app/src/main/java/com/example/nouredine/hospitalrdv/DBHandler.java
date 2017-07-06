@@ -117,4 +117,30 @@ public class DBHandler extends SQLiteOpenHelper {
             return false;
         }
     }
+
+    public ArrayList<String> getRdv () {
+        ArrayList<String> list = new ArrayList<>();
+        try {
+            SQLiteDatabase db = this.getReadableDatabase();
+            Cursor c = db.query("rdv", null, null, null, null, null, null);
+
+            if (c.getCount()>0) {
+                c.moveToFirst();
+                do {
+                    int id = c.getInt(c.getColumnIndex("id"));
+                    String dateC = c.getString(c.getColumnIndex("date_consul"));
+                    String heurC = c.getString(c.getColumnIndex("heure"));
+                    String pat = c.getString(c.getColumnIndex("patient"));
+                    String doc = c.getString(c.getColumnIndex("docteur"));
+                    list.add(dateC);
+                }while (c.moveToNext());
+            }
+            db.close();
+            return list;
+
+        } catch (Exception e)  {
+            e.printStackTrace();
+            return list;
+        }
+    }
 }

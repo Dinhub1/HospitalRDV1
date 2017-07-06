@@ -29,5 +29,30 @@ public class MainMenuActivity extends AppCompatActivity {
                 startActivity(rdvIntent);
             }
         });
+
+        ivHelp.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent rdvIntent = new Intent(MainMenuActivity.this, HelpActivity.class);
+                startActivity(rdvIntent);
+            }
+        });
+
+        ivAbout.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent rdvIntent = new Intent(MainMenuActivity.this, AboutActivity.class);
+                startActivity(rdvIntent);
+            }
+        });
+
+        ivFile.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent rdvIntent = new Intent(MainMenuActivity.this, ConsultActivity.class);
+                startActivity(rdvIntent);
+            }
+        });
     }
+
 }

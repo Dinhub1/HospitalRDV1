@@ -3,4 +3,7 @@
     <string name="welcome">Welcome to HospitalRDV</string>
     <string name="hello">Hello LP3 DINO</string>
     <string name="login">Login</string>
+    <string name="help_text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas posuere dui sit amet ante sodales consectetur. Vestibulum sed magna orci. In luctus sit amet elit at lacinia. Etiam eu tortor leo. Nam placerat euismod massa vitae egestas. Nullam eleifend est ut enim cursus, eget viverra ligula aliquet. Aenean facilisis mauris sapien, at hendrerit urna aliquam at.</string>
+    <string name="about_text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas posuere dui sit amet ante sodales consectetur. Vestibulum sed magna orci. In luctus sit amet elit at lacinia. Etiam eu tortor leo. Nam placerat euismod massa vitae egestas. Nullam eleifend est ut enim cursus, eget viverra ligula aliquet. Aenean facilisis mauris sapien, at hendrerit urna aliquam at.</string>
+    <string name="title_activity_consult">Liste des RDV</string>
 </resources>
