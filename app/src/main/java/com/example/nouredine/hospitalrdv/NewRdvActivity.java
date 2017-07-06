@@ -13,6 +13,7 @@ import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.TimePicker;
+import android.widget.Toast;
 
 public class NewRdvActivity extends AppCompatActivity {
 
@@ -23,6 +24,8 @@ public class NewRdvActivity extends AppCompatActivity {
     EditText etDate, etHoure, etPatient, etDoctor;
     Button btnSave;
     TextView tvCansel;
+
+    DBHandler data;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -36,10 +39,30 @@ public class NewRdvActivity extends AppCompatActivity {
         btnSave = (Button) findViewById(R.id.button2);
         tvCansel = (TextView) findViewById(R.id.textView6);
 
+        data = new DBHandler(this);
+
         btnSave.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                if(etDate.getText().equals("") || etHoure.getText().equals("") || etPatient.getText().equals("") || etDoctor.getText().equals("")){
+                    Toast.makeText(NewRdvActivity.this, "Veillez remplir les champs correctement!!!", Toast.LENGTH_SHORT).show();
+                }else{
+                    data.addRdv(etDate.getText().toString(),etHoure.getText().toString(),etPatient.getText().toString(),etDoctor.getText().toString());
+                    etDate.setText("");
+                    etHoure.setText("");
+                    etPatient.setText("");
+                    etDoctor.setText("");
+                    Toast.makeText(NewRdvActivity.this, "Rendez-vous sauvegardé avec succès", Toast.LENGTH_SHORT).show();
+                }
+            }
+        });
 
+        tvCansel.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent rdvIntent = new Intent(NewRdvActivity.this, MainMenuActivity.class);
+                startActivity(rdvIntent);
+                finish();
             }
         });
 

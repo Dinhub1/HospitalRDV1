@@ -19,7 +19,7 @@ public class DBHandler extends SQLiteOpenHelper {
     public void onCreate(SQLiteDatabase db) {
         db.execSQL("CREATE TABLE user (id INTEGER PRIMARY KEY AUTOINCREMENT, login VARCHAR (50), password VARCHAR(50) );");
         db.execSQL("CREATE TABLE patient (id INTEGER PRIMARY KEY AUTOINCREMENT, num_patient VARCHAR(50) UNIQUE, age INTEGER, telephone INTEGER, prenom VARCHAR (50), nom VARCHAR(50), sex VARCHAR (1));");
-        db.execSQL("CREATE TABLE rdv (id INTEGER PRIMARY KEY AUTOINCREMENT, patient INTEGER, docteur VARCHAR(50), date DATE, heure VARCHAR(50), jour VARCHAR (50));");
+        db.execSQL("CREATE TABLE rdv (id INTEGER PRIMARY KEY AUTOINCREMENT, patient VARCHAR(50), docteur VARCHAR(50), date_consul DATE, heure VARCHAR(50), jour VARCHAR (50));");
     }
 
     @Override
@@ -73,8 +73,8 @@ public class DBHandler extends SQLiteOpenHelper {
             return false;
         }
     }
-    public List<String> getUsers ()
-    {
+
+    public List<String> getUsers () {
         List<String> list=new ArrayList<>();
         try {
             SQLiteDatabase db=this.getReadableDatabase();
@@ -97,6 +97,24 @@ public class DBHandler extends SQLiteOpenHelper {
         } catch (Exception e)  {
             e.printStackTrace();
             return list;
+        }
+    }
+
+    public boolean addRdv (String date, String heure, String numPatient, String doctor){
+        try {
+            SQLiteDatabase db = this.getWritableDatabase();
+            ContentValues cv = new ContentValues();
+            cv.put("patient" , numPatient);
+            cv.put("docteur" , doctor);
+            cv.put("date_consul" , date);
+            cv.put("heure" , heure);
+            cv.put("jour" , "lundi");
+            db.insert("rdv", null, cv);
+            db.close();
+            return true;
+        } catch (Exception e)  {
+            e.printStackTrace();
+            return false;
         }
     }
 }
